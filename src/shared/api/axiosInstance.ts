@@ -1,7 +1,9 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "/api",
+  baseURL: import.meta.env.PROD
+    ? "https://biomarket-backend-6.onrender.com/api"
+    : "/api",
   headers: {
     accept: "*/*",
     "Content-Type": "application/json"
